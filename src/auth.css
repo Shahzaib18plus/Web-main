@@ -1,0 +1,135 @@
+/* Auth Pages Styling */
+.auth-container {
+    padding: 50px 20px;
+    min-height: 60vh;
+}
+
+.auth-form-container {
+    background: white; 
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.auth-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 600;
+}
+
+.auth-form .form-label {
+    font-weight: 500;
+    color: #555;
+}
+ 
+.input-group-text {
+    background-color: #f8f8f8;
+    border-right: none;
+}
+
+.auth-form .form-control {
+    border-left: none;
+    background-color: #f8f8f8;
+}
+
+.auth-form .form-control:focus {
+    box-shadow: none;
+    border-color: #ced4da;
+    background-color: #fff;
+}
+
+.forgot-password {
+    color: #777;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.signup-link, .login-link {
+    color: var(--header-bg-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.signup-link:hover, .login-link:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.social-login {
+    margin-top: 30px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.social-login p {
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-buttons .active {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: white;
+}
+
+.auth-buttons .btn-light.active {
+    background-color: white;
+    color: var(--header-bg-color);
+    font-weight: 600;
+}
+
+/* Responsive design for auth pages */
+@media (max-width: 768px) {
+    .auth-form-container {
+        padding: 20px;
+    }
+    
+    .auth-title {
+        font-size: 1.5rem;
+    }
+    
+    .social-btn {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-container {
+        padding: 30px 15px;
+    }
+    
+    .auth-form .btn {
+        font-size: 0.95rem;
+    }
+}
