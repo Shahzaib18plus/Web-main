@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -57,6 +58,12 @@ const Home = () => {
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                 </button>
+            </div>
+            <div className="cart-link">
+                <Link to="/cart" className="nav-link text-light me-2">
+                    <i className="fas fa-shopping-cart"></i>
+                    <span className="visually-hidden">Cart</span>
+                </Link>
             </div>
             <Footer />
         </>

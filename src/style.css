@@ -1,5 +1,6 @@
 :root {
     --header-bg-color: #585858;
+    --hero-bg-color: #868686;
     --button-bg-color: #ffffff;
     --button-text-color: #000000;
     --body-background-color: #a9a7a7;
@@ -13,7 +14,7 @@ body {
  
 /* Hero Section */
 .hero {
-    background-color: var(--header-bg-color);
+    background-color: var(--hero-bg-color);
     padding: 6px;
 } 
 
@@ -67,6 +68,24 @@ body {
 
 .navbar-nav .nav-link:hover {
     text-decoration: underline;
+}
+
+/* Open dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Custom dropdown background color */
+.dropdown-menu {
+    background-color: #a9a7a7 !important; /* Use your --body-background-color or desired grey */
+    color: #222;
+}
+
+/* Optional: Change dropdown item hover color for better contrast */
+.dropdown-menu .dropdown-item:hover, 
+.dropdown-menu .dropdown-item:focus {
+    background-color: #888 !important;
+    color: #fff !important;
 }
 
 .search-bar {
@@ -640,4 +659,51 @@ body {
     .newsletter-btn {
         width: 100%;
     }
+}
+
+@media (max-width: 576px) {
+  .table thead {
+    display: none;
+  }
+  .table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    padding: 0.5rem;
+  }
+  .table td {
+    display: block;
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+  }
+  .table td[data-label] {
+    text-align: left;
+  }
+  .table td[data-label]:before {
+    content: attr(data-label);
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.25rem;
+    min-width: unset;
+  }
+  .cart-qty-group {
+    flex-direction: row !important;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .cart-qty-group button, .cart-qty-group span {
+    margin: 0 2px;
+  }
+  .table td img {
+    width: 48px !important;
+    height: 48px !important;
+    margin-right: 0.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
 }

@@ -1,55 +1,84 @@
+body, .contact-page-bg {
+    background: #aaa !important;
+    min-height: 100vh;
+}
+
 .contact-container {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 24px 32px;
+    max-width: 500px;
+    margin: 32px auto;
+    padding: 24px 18px 18px 18px;
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.10);
     font-family: Arial, sans-serif;
-  }
-  
-  .contact-container h1 {
+}
+
+.contact-container h1 {
     text-align: center;
-    margin-bottom: 24px;
-    color: #007bff;
-  }
-  
-  .contact-container form {
+    margin-bottom: 20px;
+    color: #222;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.contact-container form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-  }
-  
-  .contact-container label {
+    gap: 14px;
+}
+
+.contact-container label {
     font-weight: 500;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     color: #333;
-  }
-  
-  .contact-container input,
-  .contact-container textarea {
+    font-size: 1rem;
+}
+
+.contact-container input,
+.contact-container textarea {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #e0e0e0;
     border-radius: 6px;
     font-size: 1rem;
-    resize: vertical;
-  }
-  
-  .contact-container textarea {
-    min-height: 100px;
-  }
-  
-  .contact-container button {
-    background-color: #007bff;
+    background: #f7f7f7;
+    transition: border 0.2s;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+    border: 1.5px solid #007bff;
+    outline: none;
+    background: #fff;
+}
+
+.contact-container textarea {
+    min-height: 90px;
+}
+
+.contact-container button {
+    background-color: #222;
     color: #fff;
     padding: 10px 0;
     border: none;
     border-radius: 6px;
     font-size: 1rem;
+    font-weight: 500;
     cursor: pointer;
     transition: background 0.2s;
-  }
-  
-  .contact-container button:hover {
-    background-color: #0056b3;
-  }
+    margin-top: 6px;
+}
+
+.contact-container button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+@media (max-width: 700px) {
+    .contact-container {
+        padding: 12px 2px;
+    }
+    .contact-container h1 {
+        font-size: 1.3rem;
+    }
+}

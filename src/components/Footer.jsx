@@ -1,6 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+    const [email, setEmail] = useState("");
+
+    const handleSubscribe = async (e) => {
+        e.preventDefault();
+        if (!email) {
+            alert("Please enter your email address.");
+            return;
+        }
+        try {
+            const response = await fetch("http://localhost:5000/api/subscribe", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+            });
+            const data = await response.json();
+            if (data.success) {
+                alert("Subscribed successfully!");
+                setEmail("");
+            } else {
+                alert("Subscription failed.");
+            }
+        } catch (err) {
+            alert("Network error: " + err.message);
+        }
+    };
+
     return (
         <footer className="footer">
             <div className="footer-content">
@@ -8,10 +35,16 @@ const Footer = () => {
                     <div className="newsletter-content">
                         <h3>NEWSLETTER</h3>
                         <p>Subscribe to our newsletter and get 10% off your first purchase</p>
-                        <div className="newsletter-form">
-                            <input type="email" placeholder="Your email address" className="newsletter-input" />
+                        <form className="newsletter-form" onSubmit={handleSubscribe}>
+                            <input
+                                type="email"
+                                placeholder="Your email address"
+                                className="newsletter-input"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
                             <button type="submit" className="newsletter-btn">Subscribe</button>
-                        </div>
+                        </form>
                     </div>
                 </div>
                 <div className="footer-section social-media">
@@ -34,18 +67,30 @@ const Footer = () => {
                     <h3>IMPORTANT LINKS</h3>
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li>
+                            <Link to="/about">About Us</Link>
+                        </li>
                         <li><a href="#">Collections</a></li>
                     </ul>
                 </div> 
                 <div className="footer-section customer-support">
                     <h3>CUSTOMER SUPPORT</h3>
                     <ul>
-                        <li><a href="#">Get In Touch</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Refund Policy</a></li>
-                        <li><a href="#">Terms Of Service</a></li>
+                        <li>
+                            <Link to="/contact">Get In Touch</Link>
+                        </li>
+                        <li>
+                            <Link to="/privacy-policy">Privacy Policy</Link>
+                        </li>
+                        <li>
+                            <Link to="/shipping-policy">Shipping Policy</Link>
+                        </li>
+                        <li>
+                            <Link to="/refund-policy">Refund Policy</Link>
+                        </li>
+                        <li>
+                            <Link to="/terms-of-service">Terms Of Service</Link>
+                        </li>
                     </ul>
                 </div>
             </div>
