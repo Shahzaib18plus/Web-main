@@ -15,6 +15,7 @@ import Boski from "./pages/Boski";
 import ProductDetail from "./pages/ProductDetail";
 import { CartProvider } from "./context/CartContext";
 import Checkout from "./pages/Checkout";
+import SearchPage from "./pages/SearchPage";
 
 const App = () => {
     return (
@@ -35,6 +36,7 @@ const App = () => {
                 <Route path="/boski" element={<Boski />} />
                 <Route path="/boski/:id" element={<ProductDetail />} />
                 <Route path="/checkout" element={<Checkout />} />
+                <Route path="/search" element={<SearchPage />} />
             </Routes>
           </Router>
         </CartProvider>

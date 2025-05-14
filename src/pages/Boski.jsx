@@ -20,8 +20,8 @@ function Boski() {
 
   return (
     <>
-      <Header />
       <Hero />
+      <Header />
       <div className="container" style={{ marginTop: "40px" }}>
         <h2 className="text-center mb-4">Boski Collection</h2>
         {!products.length ? (

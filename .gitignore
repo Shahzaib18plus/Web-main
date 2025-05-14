@@ -23,8 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 # Environment variables
-*.env
-
+.env
+node_modules/
 # JSON secrets
 *.json
 illume-libaas-firebase-adminsdk-fbsvc-50cbf1bb9b.json
